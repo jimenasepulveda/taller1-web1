@@ -18,5 +18,12 @@ while(opcion != 0){
     }
     console.log(`Los numeros ordenados de menor a mayor son: ${numeros.sort(organizarMenoraMayor)}`)
     console.log(`Los numeros ordenados de mayor a menor son: ${numeros.sort(organizarMenoraMayor).reverse()}`)
-  }
+    } else if (opcion===2){
+        let radio = parseFloat(prompt("digita el radio: "))
+        let pi = 3.14;
+        function areaCircunferencia (radio){
+            return pi*radio**2
+        }
+        console.log(`El area de la circunferencia con radio ${radio} es ${areaCircunferencia(radio)}`)
+    }
 }
