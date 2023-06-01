@@ -86,5 +86,28 @@ while(opcion != 0){
         console.log(`el valor del iva es de: $${iva}`);
         console.log(`el valor del descuesto es de: $${descuento}`);
         console.log(`El valor de la compra mas el iva menos el descuento es de ${valorTotal+iva-descuento}`);
+    }else if (opcion===6){
+        let nota1=parseFloat(prompt("Ingresa la primera nota del estudiante: "));
+        let nota2=parseFloat(prompt("Ingresa la segunda nota del estudiante: "));
+        let nota3=parseFloat(prompt("Ingresa la tercera nota del estudiante: "));
+        let nota4=parseFloat(prompt("Ingresa la cuarta nota del estudiante: "));
+
+        if (nota4 === 5){
+            if(nota1 <= 4){
+                nota1++;
+            }
+            if(nota2 <= 4){
+                nota2++;
+            }
+            if(nota3 <= 4){
+                nota3++;
+            }
+        }
+        let notaFinal= nota1*0.10 + nota2*0.20 + nota3*0.30 + nota4*0.40;
+        if(notaFinal > 3.5){
+            console.log(`El estudinte gano la materia`);
+        }else{
+            console.log(`El estudinte perdio la materia`);
+        }
     }
 }
