@@ -37,5 +37,29 @@ while(opcion != 0){
         }else{
             console.log(`El triangulo cuyo lado1 es ${lado1} lado2 es ${lado2} y lado3 es ${lado3} es Escaleno`);
         }
+    }else if (opcion===4){    
+        let num1 = parseInt(prompt("Ingresa el primer un numero: "));
+        let num2 = parseInt(prompt("Ingresa el segundo un numero: "));
+
+        let sumaDivisoresNum1 = 0;
+        let sumaDivisoresNum2 = 0; 
+
+        for(let i = 1; i < num1; i++){
+            if (num1 % i === 0 ){
+                sumaDivisoresNum1 += i;
+            }
+        }
+
+        for(let i = 1; i < num2; i++){
+            if (num2 % i === 0 ){
+                sumaDivisoresNum2 += i;
+            }
+        }
+
+        if(sumaDivisoresNum1 === num2 && sumaDivisoresNum2 === num1){
+            console.log(`los numeros ${num1} y ${num2} son numeros amigos`);
+        }else{
+            console.log(`los numeros ${num1} y ${num2} no son numeros amigos`);
+        }
     }
 }
