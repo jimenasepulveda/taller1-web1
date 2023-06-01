@@ -1,10 +1,16 @@
 let opcion;
-
+let opcion1=0;
+let opcion2=0;
+let opcion3=0;
+let opcion4=0;
+let opcion5=0;
+let opcion6=0;
 
 while(opcion != 0){
-  opcion = parseInt(prompt('Ingresa una opcion: \n 1-Ordenar tres números \n 2-Calcular el área de una circunferencia \n 3-Determinar el tipo de triángulo \n 4-Verificar si dos números son amigos \n 5-Calcular el valor de una compra \n 6-Calcular la nota final de un estudiante \n 0-salir'));
+    opcion = parseInt(prompt('Ingresa una opcion: \n 1-Ordenar tres números \n 2-Calcular el área de una circunferencia \n 3-Determinar el tipo de triángulo \n 4-Verificar si dos números son amigos \n 5-Calcular el valor de una compra \n 6-Calcular la nota final de un estudiante \n 0-salir'));
 
-  if(opcion===1){
+    if(opcion===1){
+        
         let numeros =[];
         let cantidad = 3;
 
@@ -18,6 +24,7 @@ while(opcion != 0){
         }
         console.log(`Los numeros ordenados de menor a mayor son: ${numeros.sort(organizarMenoraMayor)}`);
         console.log(`Los numeros ordenados de mayor a menor son: ${numeros.sort(organizarMenoraMayor).reverse()}`);
+
     } else if (opcion===2){
         let radio = parseFloat(prompt("digita el radio: "))
         let pi = 3.14;
@@ -37,12 +44,12 @@ while(opcion != 0){
         }else{
             console.log(`El triangulo cuyo lado1 es ${lado1} lado2 es ${lado2} y lado3 es ${lado3} es Escaleno`);
         }
-    }else if (opcion===4){    
+    }else if (opcion===4){
         let num1 = parseInt(prompt("Ingresa el primer un numero: "));
         let num2 = parseInt(prompt("Ingresa el segundo un numero: "));
 
         let sumaDivisoresNum1 = 0;
-        let sumaDivisoresNum2 = 0; 
+        let sumaDivisoresNum2 = 0;
 
         for(let i = 1; i < num1; i++){
             if (num1 % i === 0 ){
@@ -61,5 +68,23 @@ while(opcion != 0){
         }else{
             console.log(`los numeros ${num1} y ${num2} no son numeros amigos`);
         }
+    }else if (opcion===5){
+        let descuento = 0;
+        let compra = parseFloat(prompt("Ingresa el valor de la compra: "));
+        let cantidad = parseInt(prompt("Ingresa la cantidad de la compra: "));
+
+        let valorTotal = cantidad * compra
+        let iva = valorTotal*0.19
+
+        if(valorTotal > 500000){
+            iva = 0;
+            if(valorTotal > 1000000){
+                descuento = valorTotal * 0.10;
+            }
+        }
+        console.log(`el valor total de la compra sin iva y sin descuentos es de: $${valorTotal}`);
+        console.log(`el valor del iva es de: $${iva}`);
+        console.log(`el valor del descuesto es de: $${descuento}`);
+        console.log(`El valor de la compra mas el iva menos el descuento es de ${valorTotal+iva-descuento}`);
     }
 }
