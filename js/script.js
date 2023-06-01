@@ -1,16 +1,16 @@
 let opcion;
-let opcion1=0;
-let opcion2=0;
-let opcion3=0;
-let opcion4=0;
-let opcion5=0;
-let opcion6=0;
+let opcion1 = 0;
+let opcion2 = 0;
+let opcion3 = 0;
+let opcion4 = 0;
+let opcion5 = 0;
+let opcion6 = 0;
 
 while(opcion != 0){
     opcion = parseInt(prompt('Ingresa una opcion: \n 1-Ordenar tres números \n 2-Calcular el área de una circunferencia \n 3-Determinar el tipo de triángulo \n 4-Verificar si dos números son amigos \n 5-Calcular el valor de una compra \n 6-Calcular la nota final de un estudiante \n 0-salir'));
 
     if(opcion===1){
-        
+        opcion1++
         let numeros =[];
         let cantidad = 3;
 
@@ -26,13 +26,16 @@ while(opcion != 0){
         console.log(`Los numeros ordenados de mayor a menor son: ${numeros.sort(organizarMenoraMayor).reverse()}`);
 
     } else if (opcion===2){
+        opcion2++
         let radio = parseFloat(prompt("digita el radio: "))
         let pi = 3.14;
         function areaCircunferencia (radio){
             return (pi *radio ** 2)
         }
         console.log(`El area de la circunferencia con radio ${radio} es ${areaCircunferencia(radio)}`);
+
     } else if(opcion===3){
+        opcion3++
         let lado1 = parseFloat(prompt("Ingresa el valor del lado a: "));
         let lado2 = parseFloat(prompt("Ingresa el valor del lado b: "));
         let lado3 = parseFloat(prompt("Ingresa el valor del lado c: "));
@@ -44,7 +47,9 @@ while(opcion != 0){
         }else{
             console.log(`El triangulo cuyo lado1 es ${lado1} lado2 es ${lado2} y lado3 es ${lado3} es Escaleno`);
         }
+
     }else if (opcion===4){
+        opcion4++
         let num1 = parseInt(prompt("Ingresa el primer un numero: "));
         let num2 = parseInt(prompt("Ingresa el segundo un numero: "));
 
@@ -68,7 +73,9 @@ while(opcion != 0){
         }else{
             console.log(`los numeros ${num1} y ${num2} no son numeros amigos`);
         }
+
     }else if (opcion===5){
+        opcion5++
         let descuento = 0;
         let compra = parseFloat(prompt("Ingresa el valor de la compra: "));
         let cantidad = parseInt(prompt("Ingresa la cantidad de la compra: "));
@@ -87,6 +94,7 @@ while(opcion != 0){
         console.log(`el valor del descuesto es de: $${descuento}`);
         console.log(`El valor de la compra mas el iva menos el descuento es de ${valorTotal+iva-descuento}`);
     }else if (opcion===6){
+        opcion6++
         let nota1=parseFloat(prompt("Ingresa la primera nota del estudiante: "));
         let nota2=parseFloat(prompt("Ingresa la segunda nota del estudiante: "));
         let nota3=parseFloat(prompt("Ingresa la tercera nota del estudiante: "));
@@ -111,3 +119,9 @@ while(opcion != 0){
         }
     }
 }
+console.log(`La opcion 1 se repitio ${opcion1}`);
+console.log(`La opcion 2 se repitio ${opcion2}`);
+console.log(`La opcion 3 se repitio ${opcion3}`);
+console.log(`La opcion 4 se repitio ${opcion4}`);
+console.log(`La opcion 5 se repitio ${opcion5}`);
+console.log(`La opcion 6 se repitio ${opcion6}`);
